@@ -6,7 +6,9 @@
   "type": "module",
   "scripts": {
     "start": "nodemon src/index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "semistandard": "semistandard --fix",
+    "tap": "c8 --lines 80 --functions 80 --branches 80 --statements 80 --check-coverage --per-file tap test/**/*.test.js --no-coverage",
+    "test": "npm run semistandard && npm run tap"
   },
   "repository": {
     "type": "git",
@@ -30,16 +32,20 @@
     "@babel/plugin-proposal-decorators": "^7.19.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.18.9",
     "@babel/plugin-transform-runtime": "^7.19.1",
+    "@babel/preset-env": "^7.19.3",
+    "c8": "^7.12.0",
     "eslint": "8.19.0",
     "eslint-config-semistandard": "16.0.0",
     "eslint-config-standard": "17.0.0",
     "eslint-plugin-chai-expect": "3.0.0",
     "eslint-plugin-html": "6.2.0",
-    "eslint-plugin-mocha": "10.0.5",
+    "eslint-plugin-mocha": "^10.0.5",
     "eslint-plugin-promise": "6.0.0",
     "eslint-plugin-standard": "4.1.0",
+    "must": "^0.13.4",
     "nodemon": "^2.0.20",
-    "semistandard": "^16.0.1"
+    "semistandard": "^16.0.1",
+    "tap": "^16.3.0"
   },
   "semistandard": {
     "plugins": [
@@ -50,8 +56,16 @@
       "chai-expect"
     ],
     "parser": "@babel/eslint-parser",
-    "env": [],
-    "globals": []
+    "env": [
+      "mocha"
+    ],
+    "globals": [
+      "describe",
+      "it",
+      "after",
+      "before",
+      "expect"
+    ]
   },
   "dependencies": {
     "fastify": "^4.7.0"

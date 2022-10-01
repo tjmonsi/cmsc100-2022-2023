@@ -3,6 +3,11 @@
     "semistandard"
   ],
   "parser": "@babel/eslint-parser",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true
+  },
   "plugins": [
     "html",
     "standard",

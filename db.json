@@ -1,4 +1,13 @@
 {
+  "users": {
+    "tjmonsi": {
+      "hashedPassword": "$2b$10$43vDm8zUKEUcs81GaUwxxe84NzITlWAJI5ZWGrszWiHaar1RBjeUW",
+      "firstName": "TJ",
+      "lastName": "Monserrat",
+      "createdDate": 1664725495468,
+      "updatedDate": 1664725495468
+    }
+  },
   "todos": {
     "0108ba76-f926-432c-a071-4c2f2a37a77e": {
       "title": "New Todo",

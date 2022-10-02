@@ -1,4 +1,52 @@
 export const schemas = {
+  LoginObject: {
+    type: 'object',
+    properties: {
+      username: {
+        type: 'string'
+      },
+      password: {
+        type: 'string'
+      }
+    }
+  },
+  UserObject: {
+    type: 'object',
+    properties: {
+      username: {
+        type: 'string'
+      },
+      firstName: {
+        type: 'string'
+      },
+      lastName: {
+        type: 'string'
+      },
+      createdDate: {
+        type: 'number'
+      },
+      updatedDate: {
+        type: 'number'
+      }
+    }
+  },
+  NewUserObject: {
+    type: 'object',
+    properties: {
+      username: {
+        type: 'string'
+      },
+      password: {
+        type: 'string'
+      },
+      firstName: {
+        type: 'string'
+      },
+      lastName: {
+        type: 'string'
+      }
+    }
+  },
   TodoObject: {
     type: 'object',
     properties: {

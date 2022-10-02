@@ -19,7 +19,10 @@ export const general = {
             }
           }
         }
-      }
+      },
+      security: [
+        {}
+      ]
     }
   }
 };

@@ -69,7 +69,9 @@
   },
   "dependencies": {
     "@fastify/sensible": "^5.1.1",
+    "@fastify/swagger": "^7.6.1",
     "fastify": "^4.7.0",
+    "fastify-openapi-glue": "^4.0.1",
     "uuid": "^9.0.0"
   }
 }

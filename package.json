@@ -34,6 +34,7 @@
     "@babel/plugin-transform-runtime": "^7.19.1",
     "@babel/preset-env": "^7.19.3",
     "c8": "^7.12.0",
+    "chance": "^1.1.8",
     "eslint": "8.19.0",
     "eslint-config-semistandard": "16.0.0",
     "eslint-config-standard": "17.0.0",
@@ -70,6 +71,7 @@
   "dependencies": {
     "@fastify/sensible": "^5.1.1",
     "@fastify/swagger": "^7.6.1",
+    "bcrypt": "^5.1.0",
     "fastify": "^4.7.0",
     "fastify-openapi-glue": "^4.0.1",
     "uuid": "^9.0.0"

@@ -19,7 +19,10 @@ export const todo = {
             }
           }
         }
-      }
+      },
+      security: [
+        {}
+      ]
     },
     put: {
       summary: 'Update a todo',
@@ -51,7 +54,10 @@ export const todo = {
             }
           }
         }
-      }
+      },
+      security: [
+        {}
+      ]
     },
     delete: {
       summary: 'Delete a todo',
@@ -77,7 +83,10 @@ export const todo = {
             }
           }
         }
-      }
+      },
+      security: [
+        {}
+      ]
     }
   },
   '/todo': {
@@ -106,7 +115,10 @@ export const todo = {
             }
           }
         }
-      }
+      },
+      security: [
+        {}
+      ]
     },
     get: {
       summary: 'Get many todo',
@@ -135,7 +147,10 @@ export const todo = {
             }
           }
         }
-      }
+      },
+      security: [
+        {}
+      ]
     }
   }
 };

@@ -90,5 +90,24 @@ export const schemas = {
         type: 'number'
       }
     }
+  },
+  LoginObject: {
+    type: 'object',
+    properties: {
+      username: {
+        type: 'string'
+      },
+      password: {
+        type: 'string'
+      }
+    }
+  },
+  SuccessfulObject: {
+    type: 'object',
+    properties: {
+      success: {
+        type: 'boolean'
+      }
+    }
   }
 };

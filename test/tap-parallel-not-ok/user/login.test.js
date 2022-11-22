@@ -1,5 +1,5 @@
 import tap from 'tap';
-import { build } from '../../src/app.js';
+import { build } from '../../../src/app.js';
 import 'must/register.js';
 import Chance from 'chance';
 
@@ -9,11 +9,13 @@ tap.mochaGlobals();
 
 const prefix = '/api';
 
-describe('Register a user should work', async () => {
+describe('Logging in a user should work', async () => {
   let app;
 
   before(async () => {
-    app = await build();
+    app = await build({
+      forceCloseConnections: true
+    });
   });
 
   const newUser = {
@@ -48,17 +50,58 @@ describe('Register a user should work', async () => {
     result.updatedDate.must.not.be.null();
   });
 
-  it('Should return error HTTP code 400 if using the same username', async () => {
+  it('Login should work', async () => {
     const response = await app.inject({
       method: 'POST',
-      url: `${prefix}/register`,
+      url: `${prefix}/login`,
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(newUser)
+      body: JSON.stringify({
+        username: newUser.username,
+        password: newUser.password
+      })
     });
 
     // this checks if HTTP status code is equal to 200
-    response.statusCode.must.be.equal(400);
+    response.statusCode.must.be.equal(200);
+  });
+
+  it('Login should return an error if username doesn\'t exist', async () => {
+    const response = await app.inject({
+      method: 'POST',
+      url: `${prefix}/login`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: 'test',
+        password: 'password'
+      })
+    });
+
+    // this checks if HTTP status code is equal to 200
+    response.statusCode.must.be.equal(401);
+  });
+
+  it('Login should return an error if password is incorrect', async () => {
+    const response = await app.inject({
+      method: 'POST',
+      url: `${prefix}/login`,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        username: newUser.username,
+        password: 'password'
+      })
+    });
+
+    // this checks if HTTP status code is equal to 200
+    response.statusCode.must.be.equal(401);
+  });
+
+  after(async () => {
+    await app.close();
   });
 });

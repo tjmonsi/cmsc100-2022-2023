@@ -21,7 +21,9 @@ export const todo = {
         }
       },
       security: [
-        {}
+        {
+          cookieAuth: []
+        }
       ]
     },
     put: {
@@ -56,7 +58,9 @@ export const todo = {
         }
       },
       security: [
-        {}
+        {
+          cookieAuth: []
+        }
       ]
     },
     delete: {
@@ -85,7 +89,9 @@ export const todo = {
         }
       },
       security: [
-        {}
+        {
+          cookieAuth: []
+        }
       ]
     }
   },
@@ -117,7 +123,9 @@ export const todo = {
         }
       },
       security: [
-        {}
+        {
+          cookieAuth: []
+        }
       ]
     },
     get: {
@@ -149,7 +157,9 @@ export const todo = {
         }
       },
       security: [
-        {}
+        {
+          cookieAuth: []
+        }
       ]
     }
   }

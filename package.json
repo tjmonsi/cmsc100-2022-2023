@@ -7,7 +7,7 @@
   "scripts": {
     "start": "nodemon src/index",
     "semistandard": "semistandard --fix",
-    "tap": "c8 --lines 80 --functions 80 --branches 80 --statements 80 --check-coverage --per-file tap test/**/*.test.js --no-coverage",
+    "tap": "c8 --lines 80 --functions 80 --branches 80 --statements 80 --check-coverage --per-file tap test/**/*.test.js test/**/**/*.test.js --no-coverage",
     "test": "npm run semistandard && npm run tap"
   },
   "repository": {

@@ -48,5 +48,21 @@ export const user = {
         }
       ]
     }
+  },
+  '/auth-check': {
+    get: {
+      summary: 'Checks if user is logged in',
+      operationId: 'authCheck',
+      responses: {
+        200: {
+          $ref: '#/components/responses/SuccessfulResponse'
+        }
+      },
+      security: [
+        {
+          cookieAuth: []
+        }
+      ]
+    }
   }
 };

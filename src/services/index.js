@@ -7,6 +7,7 @@ import { updateTodo } from './todos/update-todo.js';
 import { registerUser } from './user/register-user.js';
 import { login } from './user/login.js';
 import { logout } from './user/logout.js';
+import { authCheck } from './user/auth-check.js';
 
 export class Service {
   constructor (app) {
@@ -24,4 +25,5 @@ export class Service {
   registerUser = registerUser
   login = login
   logout = logout
+  authCheck = authCheck
 }

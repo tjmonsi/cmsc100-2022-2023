@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon src/index",
+    "start": "npm-run-all --parallel nodemon webpack",
+    "nodemon": "nodemon src/index --ignore db.json",
     "semistandard": "semistandard --fix",
     "tap": "c8 --lines 80 --functions 80 --branches 80 --statements 80 --check-coverage --per-file tap test/**/*.test.js test/**/**/*.test.js --no-coverage",
     "test": "npm run semistandard && npm run tap",
@@ -52,6 +53,7 @@
     "html-webpack-plugin": "^5.5.0",
     "must": "^0.13.4",
     "nodemon": "^2.0.20",
+    "npm-run-all": "^4.1.5",
     "semistandard": "^16.0.1",
     "tap": "^16.3.0",
     "webpack": "^5.75.0",
@@ -85,10 +87,14 @@
     "@fastify/jwt": "^6.3.2",
     "@fastify/secure-session": "^5.2.0",
     "@fastify/sensible": "^5.1.1",
+    "@fastify/static": "^6.5.1",
     "@fastify/swagger": "^7.6.1",
+    "@tjmonsi/small-router": "^0.0.3",
     "bcrypt": "^5.1.0",
+    "comlink": "^4.3.1",
     "fastify": "^4.7.0",
     "fastify-openapi-glue": "^4.0.1",
+    "lit": "^2.4.1",
     "uuid": "^9.0.0"
   }
 }
